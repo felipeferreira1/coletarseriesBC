@@ -36,3 +36,5 @@ coleta_dados = function(series,datainicial="01/03/2011", datafinal = format(Sys.
 #Definida a função, podemos criar objetos para guardar os resultados
 serie = c(1,7) #Vetor com código para o dólar e o Ibovespa, respectivamente
 ex = coleta_dados(serie) #Criando objeto em que ficam guardados as séries
+
+write.csv2(ex, "exemplo.csv", row.names = F) #Salvando arquivo csv em padrão brasileiro
