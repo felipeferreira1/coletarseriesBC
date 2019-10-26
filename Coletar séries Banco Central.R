@@ -28,8 +28,6 @@ coleta_dados = function(series,datainicial="01/03/2011", datafinal = format(Sys.
   base$data = as.Date(base$data, "%d/%m/%Y") #Transforma coluna de data no formato de data
   base = base[order(base$data),] #Ordena o dataframe de acordo com a data
   base[,-1]=apply(base[,-1],2,function(x)as.numeric(gsub(",",".",x))) #Transforma o resto do dataframe em objetos numéricos
-  rm(list=objects(pattern="^nome")) #Exclui objetos intermediários criados
-  rm(list=objects(pattern="^dados")) #Exclui objetos intermediários criados
   return(base)
 }
 
