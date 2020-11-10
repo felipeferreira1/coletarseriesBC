@@ -1,11 +1,14 @@
 #Rotina para coletar e apresentar em gráficos algumas séries do banco central
 #Feito por: Felipe Simplício Ferreira
-#última atualização: 26/10/2019
+#última atualização: 10/11/2020
 
 #Definindo diretórios a serem utilizados
 
 getwd()
 setwd("C:/Users/User/Documents")
+
+#Possíveis pacotes que podem ser utilizados
+#library(rio) #Para exportar em formato xlsx
 
 #Criando função para coleta de séries
 coleta_dados_sgs = function(series,datainicial="01/03/2011", datafinal = format(Sys.time(), "%d/%m/%Y")){
@@ -36,3 +39,4 @@ serie = c(1,7) #Vetor com código para o dólar e o Ibovespa, respectivamente
 ex = coleta_dados_sgs(serie) #Criando objeto em que ficam guardados as séries
 
 write.csv2(ex, "exemplo.csv", row.names = F) #Salvando arquivo csv em padrão brasileiro
+#export(ex, "exemplo.xlsx") #Salvando em formato xlsx
